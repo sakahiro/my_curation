@@ -14,15 +14,15 @@
   </thead>
 
   <tbody>
-    <% @articles.each do |article| %>
+    <% @hatenas.each do |hatena| %>
       <tr>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
-        <td><%= article.url %></td>
-        <td><%= article.type %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= hatena.title %></td>
+        <td><%= hatena.content %></td>
+        <td><%= hatena.url %></td>
+        <td><%= hatena.type %></td>
+        <td><%= link_to 'Show', hatena %></td>
+        <td><%= link_to 'Edit', edit_article_path(hatena) %></td>
+        <td><%= link_to 'Destroy', hatena, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
