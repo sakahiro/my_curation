@@ -18,11 +18,11 @@
       <tr>
         <td><%= hatena.title %></td>
         <td><%= hatena.content %></td>
-        <td><%= hatena.url %></td>
+        <td><%= link_to('サイトを見る', hatena.url) %></td>
         <td><%= hatena.type %></td>
-        <td><%= link_to 'Show', hatena %></td>
+        <td><%= link_to 'Show', article_path(hatena) %></td>
         <td><%= link_to 'Edit', edit_article_path(hatena) %></td>
-        <td><%= link_to 'Destroy', hatena, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', article_path(hatena), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,11 +32,11 @@
       <tr>
         <td><%= qiita.title %></td>
         <td><%= qiita.content %></td>
-        <td><%= qiita.url %></td>
+        <td><%= link_to('サイトを見る', qiita.url) %></td>
         <td><%= qiita.type %></td>
-        <td><%= link_to 'Show', qiita %></td>
+        <td><%= link_to 'Show', article_path(qiita) %></td>
         <td><%= link_to 'Edit', edit_article_path(qiita) %></td>
-        <td><%= link_to 'Destroy', qiita, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', article_path(qiita), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
   </tbody>
