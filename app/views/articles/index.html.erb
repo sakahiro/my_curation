@@ -26,6 +26,20 @@
       </tr>
     <% end %>
   </tbody>
+
+  <tbody>
+  <% @qiitas.each do |qiita| %>
+      <tr>
+        <td><%= qiita.title %></td>
+        <td><%= qiita.content %></td>
+        <td><%= qiita.url %></td>
+        <td><%= qiita.type %></td>
+        <td><%= link_to 'Show', qiita %></td>
+        <td><%= link_to 'Edit', edit_article_path(qiita) %></td>
+        <td><%= link_to 'Destroy', qiita, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
 </table>
 
 <br>

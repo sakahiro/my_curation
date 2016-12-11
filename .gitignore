@@ -41,3 +41,6 @@ bower.json
 
 # Ignore Uploader
 public/uploads/
+
+# Ignore Rubymine
+.idea/

@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @hatenas = Hatena.all
+    @qiitas = Qiita.all
   end
 
   def show
