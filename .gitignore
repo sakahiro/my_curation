@@ -44,3 +44,6 @@ public/uploads/
 
 # Ignore Rubymine
 .idea/
+
+# Ignore application configuration
+/config/application.yml
