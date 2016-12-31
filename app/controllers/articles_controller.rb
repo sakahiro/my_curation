@@ -3,8 +3,8 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @hatenas = Hatena.all
-    @qiitas = Qiita.all
+    @hatenas = Hatena.limit(8)
+    @qiitas = Qiita.limit(8)
   end
 
   def show; end
