@@ -1,0 +1,21 @@
+<header class="header">
+  <h1 class="logo">
+    <%= link_to "MY CURATION", root_url %>
+  </h1>
+  <nav class="global-nav">
+    <ul>
+      <li class="nav-item"><%= link_to "TOP", root_url %></li>
+      <li class="nav-item"><%= link_to "HATENA", root_url %></li>
+      <li class="nav-item"><%= link_to "QIITA", root_url %></li>
+      <li class="nav-item"><%= link_to "POST", root_url %></li>
+      <li class="nav-item"><%= link_to "GITHUB", root_url %></li>
+      <li class="nav-item">
+        <% if user_signed_in? %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Sign in', user_session_path %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,47 +1,46 @@
-<p id="notice"><%= notice %></p>
+<main class="main">
+  <p id="notice"><%= notice %></p>
 
-<h1>Articles</h1>
+  <div class="articles">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Url</th>
-      <th>Type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  </div>
+  <h2 class="main-title">ARTICLES</h2>
 
-  <tbody>
+  <h3 class="sub-title">HATENA</h3>
+
+  <div class="clearfix">
     <% @hatenas.each do |hatena| %>
-      <tr>
-        <td><%= hatena.title %></td>
-        <td><%= hatena.content %></td>
-        <td><%= link_to('サイトを見る', hatena.url) %></td>
-        <td><%= hatena.type %></td>
-        <td><%= link_to 'Show', article_path(hatena) %></td>
-        <td><%= link_to 'Edit', edit_article_path(hatena) %></td>
-        <td><%= link_to 'Destroy', article_path(hatena), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="article-box">
+        <%= link_to hatena.url do %>
+          <%= image_tag "hatena.png", alt: "hatena", class: "image" %>
+          <h4 class="title"><%= hatena.title %></h4>
+          <p class="desc"><%= hatena.content.html_safe %></p>
+        <% end %>
+        <div class="budges clearfix">
+          <p class="budge"><%= link_to 'Show', article_path(hatena) %></p>
+          <p class="budge"><%= link_to 'Edit', edit_article_path(hatena) %></p>
+          <p class="budge"><%= link_to 'Destroy', article_path(hatena), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+      </div>
     <% end %>
-  </tbody>
+  </div>
 
-  <tbody>
-  <% @qiitas.each do |qiita| %>
-      <tr>
-        <td><%= qiita.title %></td>
-        <td><%= qiita.content %></td>
-        <td><%= link_to('サイトを見る', qiita.url) %></td>
-        <td><%= qiita.type %></td>
-        <td><%= link_to 'Show', article_path(qiita) %></td>
-        <td><%= link_to 'Edit', edit_article_path(qiita) %></td>
-        <td><%= link_to 'Destroy', article_path(qiita), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+  <h3 class="sub-title">QIITA</h3>
 
-<br>
-
-<%= link_to 'New Article', new_article_path %>
+  <div class="clearfix">
+    <% @qiitas.each do |qiita| %>
+      <div class="article-box">
+        <%= link_to qiita.url do %>
+          <%= image_tag "qiita.png", alt: "qiita", class: "image" %>
+          <h4 class="title"><%= qiita.title %></h4>
+          <p class="desc"><%= qiita.content.html_safe %></p>
+        <% end %>
+        <div class="budges clearfix">
+          <p class="budge"><%= link_to 'Show', article_path(qiita) %></p>
+          <p class="budge"><%= link_to 'Edit', edit_article_path(qiita) %></p>
+          <p class="budge"><%= link_to 'Destroy', article_path(qiita), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
